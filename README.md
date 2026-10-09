@@ -26,6 +26,12 @@
 dsh plugin --profile desktop add github:guomi6450/dsh-folder-timemachine
 ```
 
+**或者从 npm：**
+
+```bash
+dsh plugin --profile desktop add dsh-folder-timemachine
+```
+
 **或者手动：** 把整个文件夹放到任意位置（**目录名必须保持 `dsh-folder-timemachine`**），再作为本地依赖装进 profile：
 
 ```bash
