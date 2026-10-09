@@ -1,0 +1,72 @@
+{
+  "name": "dsh-folder-timemachine",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "文件夹时光机：给任意文件夹留下历史时间点并一键回到过去——像 Git 一样有版本历史，但不需要懂 Git，任何文件夹都能用。 · Folder time machine for DeepSeek Harness: snapshot any folder, browse its timeline, roll back with one click.",
+  "license": "MIT",
+  "author": "Guo <guomi6450@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guomi6450/dsh-folder-timemachine.git"
+  },
+  "homepage": "https://github.com/guomi6450/dsh-folder-timemachine#readme",
+  "bugs": {
+    "url": "https://github.com/guomi6450/dsh-folder-timemachine/issues"
+  },
+  "main": "lib/host.js",
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.1.7-rc.2"
+  },
+  "files": [
+    "lib",
+    "client",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "snapshot",
+    "version-history",
+    "backup",
+    "restore",
+    "rollback",
+    "time-machine",
+    "时光机",
+    "快照",
+    "历史版本",
+    "备份",
+    "回滚"
+  ],
+  "scripts": {
+    "check": "node --check lib/host.js && node --check lib/store.js && node --check client/client.js",
+    "test": "node tools/smoke.mjs && node tools/host-smoke.mjs"
+  },
+  "dsh": {
+    "category": "extension",
+    "displayName": "文件夹时光机",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}

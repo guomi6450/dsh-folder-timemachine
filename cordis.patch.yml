@@ -1,0 +1,15 @@
+# dsh-folder-timemachine bundle patch: one insert over the profile tree.
+#
+# The host half activates only when this package is installed as a profile
+# dependency (`dsh plugin --profile desktop add link:<dir>`), the same way the
+# other community plugins in this profile do.
+#
+# Host half: the snapshot engine, the `folder_timemachine` model tool, the
+#   /dsh-folder-timemachine/api route, and the timed-snapshot tick.
+# Browser half: the floating timeline panel in `shell.overlay`.
+#
+# IMPORTANT: this is an `insert`. Do not ALSO declare a top-level `- id:` entry
+# for the same id in your own cordis.patch.yml, or the plugin registers twice.
+- insert:
+    - id: folder-timemachine
+      name: 'dsh-folder-timemachine'

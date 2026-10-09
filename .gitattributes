@@ -1,0 +1,6 @@
+# Normalize line endings: this package is plain JS/JSON/YAML and must read the
+# same on every platform.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
